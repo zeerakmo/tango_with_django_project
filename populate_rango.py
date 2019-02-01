@@ -11,18 +11,18 @@ from rango.models import Category, Page
 def populate():
 
 	python_cat = add_cat('Python', views=128, likes=64)
-	add_page(cat=python_cat, title='Official Python Tutorial', url='www.python.com/tutorial', views=10)
-	add_page(cat=python_cat, title='How to think like a CS', url='www.amazon.com/book/how-to-think', views=11)
+	add_page(cat=python_cat, title='Official Python Tutorial', url='http://docs.python.org/2/tutorial/', views=10)
+	add_page(cat=python_cat, title='How to think like a CS', url='http://www.greenteapress.com/thinkpython/"', views=11)
 	add_page(cat=python_cat, title='Learn Python in 10 mins', url='http://www.korokithakis.net/tutorials/python/', views=12)
 	
 	django_cat = add_cat("Django", views=64, likes=32)
-	add_page(cat=django_cat,title="Official Django Tutorial",url="https://docs.djangoproject.com/en/1.5/intro/tutorial01/", views =3 )
-	add_page(cat=django_cat,title="Django Rocks",url="http://www.djangorocks.com/",views =13)
-	add_page(cat=django_cat,title="How to Tango with Django",url="http://www.tangowithdjango.com/",views =5)
+	add_page(cat=django_cat,title="Official Django Tutorial",url='https://docs.djangoproject.com/en/1.9/intro/tutorial01/', views =3 )
+	add_page(cat=django_cat,title="Django Rocks",url='http://www.djangorocks.com/',views =13)
+	add_page(cat=django_cat,title="How to Tango with Django",url='http://www.tangowithdjango.com/',views =5)
 	
 	frame_cat = add_cat("Other Frameworks", views=32, likes=16)
-	add_page(cat=frame_cat,title="Bottle",url="http://bottlepy.org/docs/dev/",views =4)
-	add_page(cat=frame_cat,title="Flask",url="http://flask.pocoo.org",views =7)
+	add_page(cat=frame_cat,title="Bottle",url='http://bottlepy.org/docs/dev/',views =4)
+	add_page(cat=frame_cat,title="Flask",url='http://flask.pocoo.org',views =7)
 	
 	for c in Category.objects.all():
 		for p in Page.objects.filter(category=c):
