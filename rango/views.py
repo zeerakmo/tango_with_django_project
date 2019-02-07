@@ -112,10 +112,10 @@ def register(request):
             profile.user = user
             if 'picture' in request.FILES:
                 profile.picture = request.FILES['picture']
-                profile.save()
-                registered = True
-            else:
-                print(user_form.errors, profile_form.errors)
+            profile.save()
+            registered = True
+        else:
+            print(user_form.errors, profile_form.errors)
     else:
 
         user_form = UserForm()
@@ -150,7 +150,7 @@ def user_login(request):
         else:
 
             print("Invalid login details: {0}, {1}".format(username, password))
-            return HttpResponse("Invalid username or password  given.")
+            return HttpResponse('Invalid login details supplied.')
 
     else:
 
